@@ -1,0 +1,16 @@
+{
+  "name": "N1-Simple",
+  "main": "./lib/main",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rdunk/N1-Simple.git"
+  },
+  "author": "Rupert Dunk <rupert@rupertdunk.com>",
+  "engines": {
+    "nylas": ">=0.3.27-1c2a936"
+  },
+  "description": "Simplified theme for Nylas N1.",
+  "dependencies": {},
+  "license": "MIT"
+}

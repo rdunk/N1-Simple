@@ -1,0 +1,279 @@
+// @import "ui-variables";
+// @import "ui-mixins";
+
+@white: #ffffff;
+@black: #000000;
+@offwhite: #fefefe;
+@offblack: #444444;
+@toolbar: #eeeeee;
+
+//Header
+//Change colour
+.sheet-toolbar-container {
+	// background: @toolbar;
+	background: @offwhite;
+}
+
+.sheet-toolbar {
+	border-bottom: 1px solid darken(@offwhite, 5%);
+}
+
+.toolbar-window-controls {
+	-webkit-filter: grayscale(100%)
+}
+
+.flexbox-handle-horizontal {
+	div {
+		border-right: 1px solid darken(@offwhite, 5%);
+	}
+}
+
+.scrollbar-track {
+	border-left: 1px solid darken(@offwhite, 5%);
+	.scrollbar-handle {
+		border-radius: 0;
+		border: none;
+		background-color: lighten(@offblack, 50%);
+	}
+	&.dragging {
+		.scrollbar-handle {
+			border-radius: 0;
+			border: none;
+			background-color: @offblack;
+		}
+	}
+}
+
+.scroll-tooltip {
+	transform: translate(-8px, 0);
+	border-radius: 0;
+	border: none;
+	background: @offblack;
+	&:before, &:after {
+		border: none;
+	}
+}
+
+//Buttons
+//Remove shadow, flatten background, square edges
+.btn {
+	background: @offwhite;
+	box-shadow: none;
+	border-radius: 0;
+	&.btn-emphasis {
+		background: @offblack;
+		border: none;
+		&:active {
+			background: @offblack;
+		}
+		&:hover {
+			background: lighten(@offblack, 50%);
+		}
+	}
+}
+
+.btn-toolbar {
+	&:hover {
+		background-color: darken(@offwhite, 5%);
+	}
+	&:active {
+		box-shadow: none;
+		background-color: darken(@offwhite, 10%);
+	}
+}
+
+.btn-feedback {
+	background: @offblack;
+	border: none;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 22px;
+	opacity: 0.25;
+	&:hover {
+		opacity: 1;
+		background: @offblack;
+	}
+}
+
+//Message List
+//Change background colour
+#message-list {
+	background-color: @offwhite;
+	.message-item-wrap {
+		.message-item-white-wrap {
+			border-radius: 0;
+		}
+	}
+	.footer-reply-area-wrap {
+		border-radius: 0;
+	}
+}
+
+.list-tabular {
+	.list-tabular-item.keyboard-cursor {
+		.list-column:first-child {
+			border-left: 3px solid @offblack;
+		}
+	}
+} 
+
+//Remove gravatars (icons) from account switcher
+#account-switcher {
+	border-bottom: darken(@offwhite, 5%);
+	.item {
+		div:first-child {
+			display: none;
+		}
+	}
+}
+
+.column-MessageListSidebar {
+	background-color: @offwhite;
+	border-left: 1px solid darken(@offwhite, 5%);
+}
+
+//Left sidebar
+#account-switcher, #account-sidebar {
+	//Change sidebar colour
+	background-color: @offwhite;
+	.item-container:hover {
+		background-color: darken(@offwhite, 5%);
+	}
+	.item {
+		//Remove colour from selected items, make bold instead
+		&.selected {
+			font-weight: bold;
+			color: @black;
+			background-color: transparent;
+			//Black icons, redundant
+			img.content-mask {
+				background-color: @black;
+			}
+		}
+		//Remove icons from left sidebar
+		.icon {
+			display: none;
+		}
+		//Remove left padding for text to adjust for removed icons
+		.name {
+			padding-left: 0;
+		}
+		//Change inbox count colour to black
+		.item-count-box {
+			border-radius: 0;
+			&.inbox {
+				background-color: @offblack;
+			}
+		}
+	}
+	//Increase size of subsection heading labels, decrease weight and increase letter spacing
+	.heading {
+		font-weight: normal;
+		letter-spacing: 0;
+		font-size: 14px;
+	}
+}
+
+//Remove background image and box shadow from labels
+.mail-label {
+	background-image: none !important;
+	box-shadow: none !important;
+	border-radius: 0;
+}
+
+.thread-list, .draft-list {
+	 .list-item {
+	 	background-color: @offwhite;
+	 	&.focused {
+	 		&:hover {
+	 			.list-column-HoverActions {
+	 				.inner {
+	 					background: -webkit-linear-gradient(left, rgba(68, 68, 68, 0) 0%, @offblack 50%, @offblack 100%)
+	 				}
+	 			}
+	 		}
+	 	}
+	 }
+	 .list-column {
+	 	// border-bottom: 1px solid #f5f5f5;
+	 	border-bottom: 1px solid darken(@white, 5%);
+	 }
+	 .thread-icon {
+	 	&.thread-icon-star {
+	 		-webkit-filter: grayscale(100%);
+	 	}
+	 	&:hover {
+	 		-webkit-filter: grayscale(100%) brightness(0%);
+	 	}
+	 }
+}
+
+.list-container {
+	.list-item {
+		&.focused {
+			background: @offblack;
+			.list-column {
+				border-bottom: 1px solid @offblack;
+			}
+		}
+	}
+}
+
+.button-dropdown {
+	&.bordered, &:hover {
+		.primary-item, .only-item, .secondary-picker {
+			border-radius: 0;
+			box-shadow: none;
+			background: none;
+			&:active {
+				box-shadow: none;
+				background: darken(@offwhite, 5%);
+			}
+		}
+	}
+}
+
+.notifications-sticky {
+	.notification-developer {
+		background-color: @offblack;
+	}
+	.notifications-sticky-item {
+		font-weight: bold;
+	}
+}
+.search-bar {
+	.menu {
+		.content-container {
+			font-size: 14px;
+			background-color: @white;
+			.item {
+				&.divider {
+					font-weight: normal;
+					color: lighten(@offblack, 25%);
+				}
+			}
+		}
+	}
+}
+
+//Remove rounded corners from inputs
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"] {
+	&.input-bordered {
+		border-radius: 0;
+		border: 1px solid darken(@offwhite, 10%);
+		font-size: 14px;
+	}
+}
